@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Today Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Daily Diary</h1>
+        <div class="textarea-container">
+            <div class="profile">
+                <img id="profilePic" src="https://picsum.photos/600" alt="Profile Picture">
+            </div>
+            <textarea id="diaryEntry" placeholder="เขียนไดอารี่ของคุณที่นี่..."></textarea>
+        </div>
+        <button onclick="saveDiary()">บันทึก</button>
+    </div>
+    <script>
+        function saveDiary() {
+            const entry = document.getElementById("diaryEntry").value;
+            if (entry.trim() !== "") {
+                localStorage.setItem("diaryEntry", entry);
+                alert("บันทึกไดอารี่เรียบร้อย!");
+            } else {
+                alert("กรุณาเขียนไดอารี่ก่อนบันทึก");
+            }
+        }
+    </script>
+</body>
+</html>
