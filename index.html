@@ -7,26 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>My Daily Diary</h1>
-        <div class="textarea-container">
-            <div class="profile">
-                <img id="profilePic" src="https://picsum.photos/600" alt="Profile Picture">
+    <div class="book-container">
+        <div class="book">
+            <div class="left-page">
+                <img id="profilePic" src="https://picsum.photos/600" alt="Profile">
             </div>
-            <textarea id="diaryEntry" placeholder="เขียนไดอารี่ของคุณที่นี่..."></textarea>
+            <div class="right-page">
+                <p id="textDisplay"></p>
+            </div>
         </div>
-        <button onclick="saveDiary()">บันทึก</button>
     </div>
-    <script>
-        function saveDiary() {
-            const entry = document.getElementById("diaryEntry").value;
-            if (entry.trim() !== "") {
-                localStorage.setItem("diaryEntry", entry);
-                alert("บันทึกไดอารี่เรียบร้อย!");
-            } else {
-                alert("กรุณาเขียนไดอารี่ก่อนบันทึก");
-            }
-        }
-    </script>
-</body>
+    <textarea id="diaryInput" placeholder="เขียนไดอารี่ของคุณที่นี่..."></textarea>
+    
+</body><script src="script.js"></script>
+
 </html>
